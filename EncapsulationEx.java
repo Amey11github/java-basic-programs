@@ -1,39 +1,45 @@
-class EncapsulationEx
+class Student
 {
-	private String name;
 	private int id;
-	private double salary;
+	private String name;
 
-	private void setData(int id,String name,double salary)
+	Student(int id,String name)
+	{
+		this.id=id;
+		this.name=name;
+	}
+
+	public int getId()
+	{
+		return this.id;
+	}
+
+	public String getName()
+	{
+		return this.name;
+	}
+
+	public void setName(String name)
 	{
 		this.name=name;
-		this.id=id;
-		this.salary=salary;
 	}
 
-	public void display()
+	public void setId(int id)
 	{
-		System.out.println("ID : "+id);
-		System.out.println("NAME : "+name);
-		System.out.println("SALARY : "+salary);
-		System.out.println("-------------------------------");
+		this.id=id;
 	}
 
-	public static void main(String[] args) {
-		EncapsulationEx ex=new EncapsulationEx();
-		ex.setData(123,"vivek",56789.9);
-		EncapsulationEx2.m1(ex);
-        // System.out.println("------------------------------");
-		// System.out.println("Name : "+ex.name);
-		// System.out.println("id : "+ex.id);
-		// System.out.println("salary : "+ex.salary);
-	}
 }
 
-class EncapsulationEx2
+class EncapsulationEx
 {
-	public static void m1(EncapsulationEx ex)
-	{
-	    ex.display();
+	public static void main(String[] args) {
+
+		System.out.println("main starts");
+		Student s1=new Student(121,"hemant");
+		System.out.println(s1.getName());
+		s1.setName("amey");
+		System.out.println("after setName() : "+s1.getName());
+		
 	}
 }
